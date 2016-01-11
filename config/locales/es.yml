@@ -15,7 +15,7 @@ es:
     models:
       spree/slide: "Diapositiva"
 
-  spree_slider:
+  solidus_slider:
     config_name: "Diapositivas Spree"
     config_description: "Configura las diapositivas de portada"
     title: "Diapositivas"

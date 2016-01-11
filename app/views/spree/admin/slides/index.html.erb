@@ -1,9 +1,9 @@
 <% content_for :page_actions do %>
-  <%= button_link_to t('spree_slider.new_slide'), new_object_url, { :class => 'btn-success', :icon => 'add', :id => 'admin_new_slide_link' } %>
+  <%= button_link_to t('solidus_slider.new_slide'), new_object_url, { :class => 'btn-success', :icon => 'add', :id => 'admin_new_slide_link' } %>
 <% end %>
 
 <% content_for :page_title do %>
-  <%= t('spree_slider.title') %>
+  <%= t('solidus_slider.title') %>
 <% end %>
 
 <table class="table sortable" id="listing_slides" data-hook data-sortable-link="<%= update_positions_admin_slides_url %>" >

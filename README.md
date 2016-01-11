@@ -1,13 +1,13 @@
-# SpreeSlider
+# SolidusSlider
 
-Add a slider to the homepage of your Spree site, and manage the slideshow from within the Admin panel.
+Add a slider to the homepage of your Spree-Solidus site, and manage the slide show from within the Admin panel.
 
 ## Installation
 
-To install, add spree_slider to your @Gemfile@ and run `bundle install`:
+To install, add solidus_slider to your @Gemfile@ and run `bundle install`:
 
 ```
-gem 'spree_slider', github: 'spree-contrib/spree_slider'
+gem 'solidus_slider', github: 'spree-contrib/solidus_slider'
 ```
 
 Then install and run the migrations to add the tables:
@@ -49,7 +49,7 @@ If you desire to have a customized carousel template you can specify your own li
 ## Dynamic content management
 
 To add dynamic content, go to the spree admin section, under 'Configuration'
-and find the Spree Slider & Spree Slider Locations menu.
+and find the Solidus Slider & Solidus Slider Locations menu.
 
 You can create new slides and new locations. Then to fetch & render the slider for a particular location you can do the following:
 

@@ -1,2 +1,2 @@
 <!-- insert_after '#header[data-hook]' -->
-<%= yield :spree_slider %>
+<%= yield :solidus_slider %>

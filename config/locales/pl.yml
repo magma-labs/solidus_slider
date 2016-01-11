@@ -19,9 +19,9 @@ pl:
   spree:
     slides: "Slajdy"
 
-  spree_slider:
-    config_name: "Spree Slider"
-    config_description: "Zarządzaj zawartości Spree Slidera"
+  solidus_slider:
+    config_name: "Solidus Slider"
+    config_description: "Zarządzaj zawartości Solidus Slidera"
     title: "Slajdy"
     new_slide: "Nowy slajd"
     editing_slide: "Edycja slajdu"

@@ -15,7 +15,7 @@ ru:
     models:
       spree/slide: "Слайд"
       
-  spree_slider:
+  solidus_slider:
     config_name: "Слайды"
     config_description: "Работа со слайдами"
     title: "Слайды"

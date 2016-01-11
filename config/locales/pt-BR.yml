@@ -16,9 +16,9 @@ pt-BR:
     models:
       spree/slide: "Slide"
 
-  spree_slider:
-    config_name: "Spree Slider"
-    config_description: "Configurações Spree Slider"
+  solidus_slider:
+    config_name: "Solidus Slider"
+    config_description: "Configurações Solidus Slider"
     title: "Slides"
     new_slide: "Novo Slide"
     editing_slide: "Editando Slide"
@@ -27,9 +27,9 @@ pt-BR:
     placeholder_link_url: "Deixe em branco para usar a url do produto"
     image_tip: "Padrão é a primeira imagem do produto"
 
-  spree_slider_locations:
-    config_name: "Locais do Spree Slider"
-    config_description: "Configurações de Locais do Spree Slider"
+  solidus_slider_locations:
+    config_name: "Locais do Solidus Slider"
+    config_description: "Configurações de Locais do Solidus Slider"
     title: "Locais do Slider"
     new_location: "Novo Local"
     editing_location: "Editando Local"

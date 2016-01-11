@@ -15,9 +15,9 @@ de:
     models:
       spree/slide: "Slide"
 
-  spree_slider:
+  solidus_slider:
     config_name: "Spree Slides"
-    config_description: "Verwalten Spree Slider Inhalt"
+    config_description: "Verwalten Solidus Slider Inhalt"
     title: "Slides"
     new_slide: "Neue Slide"
     editing_slide: "Bearbeiten Slide"

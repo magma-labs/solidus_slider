@@ -1,8 +1,8 @@
-module SpreeSlider
+module SolidusSlider
   class Engine < Rails::Engine
-    require 'spree/core'
+    require 'solidus/core'
     isolate_namespace Spree
-    engine_name 'spree_slider'
+    engine_name 'solidus_slider'
 
     config.autoload_paths += %W(#{config.root}/lib)
 

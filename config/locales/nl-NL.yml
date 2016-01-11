@@ -15,9 +15,9 @@ nl-NL:
     models:
       spree/slide: "Slide"
 
-  spree_slider:
-    config_name: "Spree Slider"
-    config_description: "Beheer Spree Slider inhoud"
+  solidus_slider:
+    config_name: "Solidus Slider"
+    config_description: "Beheer Solidus Slider inhoud"
     title: "Slides"
     new_slide: "Nieuwe Slide"
     editing_slide: "Bewerken Van Slide"

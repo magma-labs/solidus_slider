@@ -16,5 +16,6 @@ group :test do
 end
 
 gem 'solidus', '~> 1.1'
+gem 'deface', github: 'spree/deface'
 
 gemspec

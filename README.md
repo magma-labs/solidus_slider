@@ -12,8 +12,8 @@ gem 'solidus_slider', github: 'samanmohamadi/solidus_slider'
 
 Then install and run the migrations to add the tables:
 ```
-bundle exec rake railties:install:migrations
-bundle exec rake db:migrate
+bundle exec rails g solidus:slider:install
+
 ```
 
 ### Using the slider
@@ -24,7 +24,7 @@ Spree 3 uses the bootstrap framework and a default slider template is available 
 Example usage:
 
 ```erb
-  <%= render partial: 'spree/shared/slider', locals: { slider: Spree::Slide.published, cid: 'home', interval: false } %>
+  <%= render partial: 'spree/shared/slider', locals: { slider: Spree::Slide.published, cid: 'home' } %>
 ```
 
 If you desire to have a customized carousel template you can specify your own like so:

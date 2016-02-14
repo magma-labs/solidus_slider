@@ -7,7 +7,7 @@ Add a slider to the homepage of your Spree-Solidus site, and manage the slide sh
 To install, add solidus_slider to your @Gemfile@ and run `bundle install`:
 
 ```
-gem 'solidus_slider', github: 'spree-contrib/solidus_slider'
+gem 'solidus_slider', github: 'samanmohamadi/solidus_slider'
 ```
 
 Then install and run the migrations to add the tables:

@@ -8,6 +8,7 @@ en:
   preview: "Preview"
   image_file_name: "Image file name"
   published: "Published"
+  show_caption: "Show Caption"
   position: "Position"
   y: "Yes"
   n: "No"

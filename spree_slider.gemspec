@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'solidus_slider'
-  s.version     = '1.2.0'
+  s.version     = '1.2.5'
   s.summary     = 'Solidus Slider extension'
   s.description = 'Adds a slider to the homepage'
   s.required_ruby_version = '>= 1.8.7'
@@ -18,4 +18,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'solidus_core', '>= 1.1'
   s.add_dependency 'solidus_backend', '>= 1.1'
+
+  s.add_development_dependency 'byebug'
 end

@@ -35,7 +35,7 @@ If you desire to have a customized carousel template you can specify your own li
     <ul class="slide">
       <% Spree::Slide.published.order('position ASC').each do |s| %>
         <li>
-          <h1><%= s.slide_name %></h1>
+          <h1><%= s.slide_caption %></h1>
           <%= link_to image_tag(s.slide_image.url), url_for(s.link_url) %>
         </li>
       <% end %>

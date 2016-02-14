@@ -1,5 +1,7 @@
 class Spree::Slide < ActiveRecord::Base
 
+  self.table_name = 'spree_slides'
+
   has_and_belongs_to_many :slide_locations, 
                           class_name: 'Spree::SlideLocation', 
                           join_table: 'spree_slide_slide_locations'
@@ -20,7 +22,11 @@ class Spree::Slide < ActiveRecord::Base
     super
   end
 
-  def slide_name
+  def show_caption?
+    show_caption
+  end
+
+  def slide_caption
     name.blank? && product.present? ? product.name : name
   end
 

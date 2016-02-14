@@ -1,41 +1,39 @@
 <% if slider.size > 0 %>
 
-  <%# generate a random number for the carousel id - in case you want multiple per page %>
-  <% cid ||= Random.rand(1000) %>
+    <%# generate a random number for the carousel id - in case you want multiple per page %>
+    <% cid ||= Random.rand(1000) %>
+    <% slider_id= defined?(id) ? id : "carousel-slider-#{cid}" %>
+    <div id="<%= slider_id %>" class="carousel">
 
-  <div id="carousel-slider-<%= cid %>" class="carousel slide" data-ride="carousel" <%= (defined? interval) != nil ? "data-interval=#{interval.to_s}" : "" %>>
-    <%# Indicators %>
-    <ol class="carousel-indicators">
+      <%# Wrapper for slider %>
       <% slider.each_with_index do |slide, index| %>
-        <li data-target="#carousel-prod-<%= cid %>" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>"></li>
-      <% end %>
-    </ol>
-
-    <%# Wrapper for slider %>
-    <div class="carousel-inner">
-      <% slider.each_with_index do |slide, index| %>
-        <div class="item <%= index == 0 ? 'active' : '' %>">
-          <%= link_to image_tag(slide.slide_image.url, alt: slide.slide_name), url_for(slide.slide_link) %>
-          <div class="carousel-caption">
-            <h3><%= slide.slide_name %></h3>
-            <% unless slide.body.blank? %>
-              <p><%= slide.body %><p>
-            <% end %>
+          <div class="item">
+            <%= link_to image_tag(slide.slide_image.url, alt: slide.slide_caption), url_for(slide.slide_link) %>
+            <div>
+              <% if slide.show_caption? %>
+                  <h3><%= slide.slide_caption %></h3>
+              <% end %>
+              <% unless slide.body.blank? %>
+                  <p><%= slide.body %><p>
+              <% end %>
+            </div>
           </div>
-        </div>
       <% end %>
     </div>
+    <script>
+      $(document).ready(function () {
 
-    <%# Controls %>
-    <a class="left carousel-control" href="#carousel-slider-<%= cid %>" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only"><%= t(:previous) %></span>
-    </a>
-    <a class="right carousel-control" href="#carousel-slider-<%= cid %>" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only"><%= t(:next) %></span>
-    </a>
+        $("#<%= slider_id %>").owlCarousel({
+          slideSpeed : 800,
+          singleItem: true,
+          autoPlay: 5000,
+          stopOnHover: true
+          // navigationText: ['<span class="slideshow-arrow slideshow-arrow-left"></span>', '<span class="slideshow-arrow slideshow-arrow-right"></span>'],
+//          transitionStyle: "goDown"
+        });
 
-  </div>
+
+      });
+    </script>
 
 <% end %>

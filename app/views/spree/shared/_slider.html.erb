@@ -1,14 +1,8 @@
 <% if slider.size > 0 %>
-
-    <%# generate a random number for the carousel id - in case you want multiple per page %>
-    <% cid ||= Random.rand(1000) %>
-    <% slider_id= defined?(id) ? id : "carousel-slider-#{cid}" %>
-    <div id="<%= slider_id %>" class="carousel">
-
-      <%# Wrapper for slider %>
+    <slick slides-to-show="1" ng-if="true" settings="{arrows:false,centerMode:false,centerPadding:'0'}">
       <% slider.each_with_index do |slide, index| %>
           <div class="item">
-            <%= link_to image_tag(slide.slide_image.url, alt: slide.slide_caption), url_for(slide.slide_link) %>
+            <%= link_to image_tag(slide.slide_image.url, alt: slide.slide_caption,class:'img-responsive'), url_for(slide.slide_link) %>
             <div>
               <% if slide.show_caption? %>
                   <h3><%= slide.slide_caption %></h3>
@@ -19,24 +13,5 @@
             </div>
           </div>
       <% end %>
-    </div>
-    <script>
-      $(document).ready(function () {
-
-        $("#<%= slider_id %>").owlCarousel({
-          slideSpeed : 800,
-          singleItem: true,
-          autoPlay: 5000,
-          stopOnHover: true,
-          dots:false,
-          navigation:false,
-          pagination:false
-          // navigationText: ['<span class="slideshow-arrow slideshow-arrow-left"></span>', '<span class="slideshow-arrow slideshow-arrow-right"></span>'],
-//          transitionStyle: "goDown"
-        });
-
-
-      });
-    </script>
-
+    </slick>
 <% end %>

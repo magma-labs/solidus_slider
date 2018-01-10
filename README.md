@@ -12,7 +12,7 @@ gem 'solidus_slider', github: 'samanmohamadi/solidus_slider'
 
 Then install and run the migrations to add the tables:
 ```
-bundle exec rails g solidus:slider:install
+bundle exec rails g solidus_slider:install
 
 ```
 

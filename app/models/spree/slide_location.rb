@@ -1,9 +1,8 @@
-class Spree::SlideLocation < ActiveRecord::Base
+module Spree
+  class SlideLocation < ActiveRecord::Base
+    has_one :slide_slide_locations
+    has_one :slide, through: :slide_slide_locations
 
-  has_and_belongs_to_many :slides, 
-                          class_name: 'Spree::Slide', 
-                          join_table: 'spree_slide_slide_locations'
-
-  validates :name, :presence => true
-
+    validates :name, presence: true
+  end
 end

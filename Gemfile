@@ -1,21 +1,26 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-group :test do
-  gem 'rspec-rails', '~> 2.11.0'
-  gem 'factory_girl', '~> 2.6.4'
-  gem 'factory_girl_rails', '~> 1.7'
-  gem 'faker'
-  gem 'shoulda-matchers'
-  gem 'guard-rspec'
-  gem 'sqlite3'
+branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
+gem 'solidus', github: 'solidusio/solidus', branch: branch
+gem 'solidus_i18n', github: 'solidusio-contrib/solidus_i18n', branch: branch
+gem 'globalize', github: 'globalize/globalize', branch: branch
 
-  if RUBY_PLATFORM.downcase.include? "darwin"
-    gem 'rb-fsevent'
-    gem 'growl'
-  end
+if branch == 'master' || branch >= 'v2.3'
+  gem 'rails', '~> 5.1.0'
+elsif branch >= 'v2.0'
+  gem 'rails', '~> 5.0.0'
+  gem 'rails-controller-testing', group: :test
+else
+  gem 'rails', '~> 4.2.0'
+  gem 'rails_test_params_backport', group: :test
 end
 
-gem 'solidus'
-gem 'deface', github: 'spree/deface'
+gem 'pg'
+gem 'sqlite3'
+gem 'mysql2'
+
+group :development, :test do
+  gem 'i18n-tasks', '~> 0.9' if branch == 'master'
+end
 
 gemspec

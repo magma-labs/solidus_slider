@@ -4,7 +4,7 @@ module SolidusSlider
     isolate_namespace Spree
     engine_name 'solidus_slider'
 
-    # config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W(#{config.root}/lib)
 
     # use rspec for tests
     config.generators do |g|

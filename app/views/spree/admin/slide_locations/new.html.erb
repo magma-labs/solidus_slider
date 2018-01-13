@@ -1,21 +1,16 @@
+<%= render partial: 'spree/admin/shared/configuration_menu' %>
+
 <% content_for :page_title do %>
-  <%= t('solidus_slider_locations.new_location') %>
+  <%= Spree.t('slider_locations.new_location') %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <%= button_link_to t('solidus_slider_locations.back_to_locations'), spree.admin_slide_locations_path, :icon => 'arrow-left' %>
+  <%= button_link_to Spree.t('slider_locations.back_to_locations'), spree.admin_slide_locations_path %>
 <% end %>
 
-<%= render 'spree/shared/error_messages', :target => @slide_location %>
+<%= render 'spree/shared/error_messages', target: @slide_location %>
 
 <%= form_for [:admin, @slide_location] do |f| %>
-  <fieldset class="no-border-top">
-    <%= render :partial => 'form', :locals => { :f => f } %>
-
-    <div class="clear"></div>
-
-    <div data-hook="admin_shipping_method_new_form_buttons">
-      <%= render :partial => 'spree/admin/shared/new_resource_links' %>
-    </div>
-  </fieldset>
+  <%= render partial: 'form', locals: { f: f } %>
+  <%= render partial: 'spree/admin/shared/new_resource_links' %>
 <% end %>

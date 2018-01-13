@@ -1,8 +1,7 @@
-es:
+es-MX:
   activerecord:
     models:
       spree/slide: "Diapositiva"
-
   spree:
     next: "Siguiente"
     previous: "Anterior"
@@ -15,13 +14,20 @@ es:
     position: "Posición"
     y: "Sí"
     n: "No"
-
     slider:
       config_name: "Diapositivas"
       config_description: "Configura las diapositivas de portada"
       title: "Diapositivas"
       new_slide: "Nueva Diapositiva"
+      back_to_slides: "Regresar a Diapositivas"
       editing_slide: "Editando Diapositiva"
       placeholder_name: "En blanco para usar el del producto"
       placeholder_link_url: "En blanco para usar la del producto"
       image_tip: "Si no selecciona ninguna imagen, se tomará la primera del producto"
+    slider_locations:
+      config_name: 'Locación de Diapositivas'
+      config_description: 'Configura las locaciones de las diapositivas'
+      title: 'Locación de Diapositivas'
+      new_location: 'Nueva Locación'
+      back_to_locations: 'Regresar a Locaciones'
+      editing_location: 'Editar Locación'

@@ -1,26 +1,27 @@
 de:
-  next: "Nächste"
-  previous: "Vorhergehend"
-  name: "Name"
-  body: "Körper"
-  link_url: "Link URL"
-  image: "Bild"
-  image_file_name: "Name der Bilddatei"
-  published: "Veröffentlicht"
-  position: "Position"
-  y: "Ja"
-  n: "Nein"
-
   activerecord:
     models:
       spree/slide: "Slide"
 
-  solidus_slider:
-    config_name: "Spree Slides"
-    config_description: "Verwalten Solidus Slider Inhalt"
-    title: "Slides"
-    new_slide: "Neue Slide"
-    editing_slide: "Bearbeiten Slide"
-    placeholder_name: "Leer lassen, um Produkt-Namen verwenden"
-    placeholder_link_url: "Leer lassen, um Produkt-URL verwenden"
-    image_tip: "Standard ersten product image"
+  spree:
+    next: "Nächste"
+    previous: "Vorhergehend"
+    name: "Name"
+    body: "Körper"
+    link_url: "Link URL"
+    image: "Bild"
+    image_file_name: "Name der Bilddatei"
+    published: "Veröffentlicht"
+    position: "Position"
+    y: "Ja"
+    n: "Nein"
+
+    slider:
+      config_name: "Spree Slides"
+      config_description: "Verwalten Spree Slider Inhalt"
+      title: "Slides"
+      new_slide: "Neue Slide"
+      editing_slide: "Bearbeiten Slide"
+      placeholder_name: "Leer lassen, um Produkt-Namen verwenden"
+      placeholder_link_url: "Leer lassen, um Produkt-URL verwenden"
+      image_tip: "Standard ersten product image"

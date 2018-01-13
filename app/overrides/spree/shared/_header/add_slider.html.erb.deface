@@ -1,2 +1,3 @@
 <!-- insert_after '#header[data-hook]' -->
+
 <%= yield :solidus_slider %>

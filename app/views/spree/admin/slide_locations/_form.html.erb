@@ -1,10 +1,10 @@
-<div class="row">
-
-  <div class="col-md-12">
-    <%= f.field_container :name do %>
-      <%= f.label :name, t(:name) %><br>
-      <%= f.text_field :name, class: "form-control fullwidth" %>
-    <% end %>
+<div data-hook='admin_slide_location_form_fields'>
+  <div class='row'>
+    <div class='col-12'>
+      <%= f.field_container :name do %>
+        <%= f.label :name, Spree.t(:name) %><br>
+        <%= f.text_field :name, class: 'form-control fullwidth' %>
+      <% end %>
+    </div>
   </div>
-
 </div>

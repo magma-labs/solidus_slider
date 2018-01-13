@@ -1,26 +1,27 @@
 nl:
-  next: "Volgende"
-  previous: "Vorige"
-  name: "Naam"
-  body: "Lichaam"
-  link_url: "Link URL"
-  image: "Beeld"
-  image_file_name: "Bestandsnaam"
-  published: "Gepubliceerd"
-  position: "Positie"
-  y: "Ja"
-  n: "Geen"
-
   activerecord:
     models:
       spree/slide: "Slide"
 
-  solidus_slider:
-    config_name: "Solidus Slider"
-    config_description: "Beheer Solidus Slider inhoud"
-    title: "Slides"
-    new_slide: "Nieuwe Slide"
-    editing_slide: "Bewerken Van Slide"
-    placeholder_name: "Laat leeg om product naam te gebruiken"
-    placeholder_link_url: "Laat leeg om product url gebruiken"
-    image_tip: "Default eerste product afbeelding"
+  spree:
+    next: "Volgende"
+    previous: "Vorige"
+    name: "Naam"
+    body: "Lichaam"
+    link_url: "Link URL"
+    image: "Beeld"
+    image_file_name: "Bestandsnaam"
+    published: "Gepubliceerd"
+    position: "Positie"
+    y: "Ja"
+    n: "Geen"
+
+    slider:
+      config_name: "Spree Slider"
+      config_description: "Beheer Spree Slider inhoud"
+      title: "Slides"
+      new_slide: "Nieuwe Slide"
+      editing_slide: "Bewerken Van Slide"
+      placeholder_name: "Laat leeg om product naam te gebruiken"
+      placeholder_link_url: "Laat leeg om product url gebruiken"
+      image_tip: "Default eerste product afbeelding"

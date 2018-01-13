@@ -1,35 +1,41 @@
-# SolidusSlider
+# Solidus Slider
+Credit to https://github.com/samanmohamadi/solidus_slider
 
-Add a slider to the homepage of your Spree-Solidus site, and manage the slide show from within the Admin panel.
+Basic Overview
+-----
 
-## Installation
+Add a slider to the homepage of your Solidus site, and manage the slide show from within the Admin panel.
 
-To install, add solidus_slider to your @Gemfile@ and run `bundle install`:
+Setup
+-----
 
+Add this extension to your Gemfile:
+
+```ruby
+gem 'solidus_slider', github: 'jtapia/solidus_slider'
 ```
-gem 'solidus_slider', github: 'samanmohamadi/solidus_slider'
-```
 
-Then install and run the migrations to add the tables:
+Then run:
+
 ```
 bundle exec rails g solidus_slider:install
-
 ```
 
-### Using the slider
+Using the slider
+-----
 
 Spree 3 uses the bootstrap framework and a default slider template is available for bootstrap 3
 `spree/shared/_slider.html.erb`.
 
 Example usage:
 
-```erb
+```ruby
   <%= render partial: 'spree/shared/slider', locals: { slider: Spree::Slide.published, cid: 'home' } %>
 ```
 
 If you desire to have a customized carousel template you can specify your own like so:
 
-```erb
+```ruby
 <% if Spree::Slide.published.count > 0 %>
   <section id="slideshow">
     <ul class="slide">
@@ -46,16 +52,15 @@ If you desire to have a customized carousel template you can specify your own li
 <% end %>
 ```
 
-## Dynamic content management
+Dynamic content management
+-----
 
 To add dynamic content, go to the spree admin section, under 'Configuration'
 and find the Solidus Slider & Solidus Slider Locations menu.
 
 You can create new slides and new locations. Then to fetch & render the slider for a particular location you can do the following:
 
-```erb
+```ruby
   <% slides = Spree::Slide.published.location("home") %>
   <%= render partial: 'spree/shared/slider', locals: { slider: slides } %>
 ```
-
-Copyright (c) 2012 [R.S.A.](http://www.rsaweb.com) released under the New BSD License

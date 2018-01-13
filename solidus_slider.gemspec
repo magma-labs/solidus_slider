@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_path  = 'lib'
   s.requirements << 'none'
 
-  solidus_version = ['>= 1.0', '< 3']
+  solidus_version = ['>= 1.2', '< 3']
   s.add_dependency 'solidus_core', solidus_version
   s.add_dependency 'solidus_backend', solidus_version
   s.add_dependency 'solidus_api', solidus_version
@@ -27,15 +27,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'jbuilder', '~> 2.6'
   s.add_dependency 'kaminari', '>= 0.17', '< 2.0'
 
-  s.add_development_dependency 'byebug'
-  s.add_development_dependency 'pry'
-  s.add_development_dependency 'database_cleaner'
-  s.add_development_dependency 'factory_bot'
+  s.add_development_dependency 'database_cleaner', '~> 1.6'
+  s.add_development_dependency 'factory_bot', '~> 4.4'
   s.add_development_dependency 'ffaker'
-  s.add_development_dependency 'rubocop'
-  s.add_development_dependency 'rspec'
-  s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'capybara-screenshot'
+  s.add_development_dependency 'rspec-rails', '~> 3.3'
+  s.add_development_dependency 'simplecov', '~> 0.14'
   s.add_development_dependency 'rspec-activemodel-mocks'
   s.add_development_dependency 'webmock'
   s.add_development_dependency 'rb-fsevent'

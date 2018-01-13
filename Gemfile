@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
 gem 'solidus', github: 'solidusio/solidus', branch: branch
-gem 'solidus_i18n', github: 'solidusio-contrib/solidus_i18n', branch: branch
-gem 'globalize', github: 'globalize/globalize', branch: branch
+gem 'solidus_i18n', github: 'solidusio-contrib/solidus_i18n', branch: 'master'
 
 if branch == 'master' || branch >= 'v2.3'
   gem 'rails', '~> 5.1.0'
@@ -15,7 +14,7 @@ else
   gem 'rails_test_params_backport', group: :test
 end
 
-gem 'pg'
+gem 'pg', '~> 0.21'
 gem 'sqlite3'
 gem 'mysql2'
 

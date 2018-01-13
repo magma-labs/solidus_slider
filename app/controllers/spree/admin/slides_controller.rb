@@ -1,8 +1,6 @@
 module Spree
   module Admin
     class SlidesController < ResourceController
-      respond_to :html
-
       def index
         @slides = Spree::Slide.order(:position).page(params[:page]).per(params[:per_page])
       end

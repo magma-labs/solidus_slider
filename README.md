@@ -1,5 +1,5 @@
 # Solidus Slider
-[![Build Status](https://travis-ci.org/jtapia/solidus_slider.svg?branch=master)](https://travis-ci.org/jtapia/solidus_slider)
+[![Build Status](https://travis-ci.org/jtapia/solidus_slider.svg?branch=master)](https://travis-ci.org/jtapia/solidus_slider)<br />
 Credit to https://github.com/samanmohamadi/solidus_slider
 
 Basic Overview
@@ -65,3 +65,10 @@ You can create new slides and new locations. Then to fetch & render the slider f
   <% slides = Spree::Slide.published.location("home") %>
   <%= render partial: 'spree/shared/slider', locals: { slider: slides } %>
 ```
+
+Updates
+-----
+
+- Add ability to find slide locations via autocomplete(Admin)
+- Update views(Admin)
+- Update model relations

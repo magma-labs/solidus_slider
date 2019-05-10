@@ -1,5 +1,5 @@
 # Solidus Slider
-[![Build Status](https://travis-ci.org/jtapia/solidus_slider.svg?branch=master)](https://travis-ci.org/jtapia/solidus_slider)<br />
+[![Build Status](https://travis-ci.org/magma-labs/solidus_slider.svg?branch=master)](https://travis-ci.org/magma-labs/solidus_slider)<br />
 Credit to https://github.com/samanmohamadi/solidus_slider
 
 Basic Overview
@@ -13,7 +13,7 @@ Setup
 Add this extension to your Gemfile:
 
 ```ruby
-gem 'solidus_slider', github: 'jtapia/solidus_slider'
+gem 'solidus_slider', github: 'magma-labs/solidus_slider'
 ```
 
 Then run:

@@ -4,7 +4,9 @@ branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
 gem 'solidus', github: 'solidusio/solidus', branch: branch
 gem 'solidus_i18n', github: 'solidusio-contrib/solidus_i18n', branch: 'master'
 
-if branch == 'master' || branch >= 'v2.3'
+if branch == 'master' || branch >= 'v2.6'
+  gem 'rails', '~> 5.2.0'
+elsif branch >= '2.3'
   gem 'rails', '~> 5.1.0'
 elsif branch >= 'v2.0'
   gem 'rails', '~> 5.0.0'

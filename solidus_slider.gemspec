@@ -8,9 +8,9 @@ require 'solidus_slider/version'
 Gem::Specification.new do |s|
   s.name        = 'solidus_slider'
   s.version     = SolidusSlider::VERSION
-  s.authors     = ['Giuseppe Privitera', 'Jonathan Tapia']
-  s.email       = 'jonathan.tapia@magmalabs.io'
-  s.homepage    = 'https://github.com/jtapia/solidus_slider'
+  s.authors     = ['Giuseppe Privitera', 'Jonathan Tapia', 'MagmaLabs']
+  s.email       = 'developers@magmalabs.io'
+  s.homepage    = 'https://github.com/magma-labs/solidus_slider'
   s.summary     = 'Spree Slider extension'
   s.description = 'Adds a slider to the homepage'
 

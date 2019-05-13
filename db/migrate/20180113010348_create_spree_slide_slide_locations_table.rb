@@ -1,4 +1,4 @@
-class CreateSpreeSlideSlideLocationsTable < SolidusSupport::Migration[4.2]
+class CreateSpreeSlideSlideLocationsTable < ActiveRecord::Migration[4.2]
   def change
     create_table :spree_slide_slide_locations do |t|
       t.integer :slide_id

@@ -61,7 +61,7 @@
     <div class='col-2'>
       <%= f.field_container :image do %>
         <% if f.object.image? %>
-          <p><%= image_tag f.object.image, style: 'max-width: 100%; height: auto;' %></p>
+          <p><%= image_tag f.object.image.url, style: 'max-width: 100%; height: auto;' %></p>
         <% end %>
       <% end %>
     </div>

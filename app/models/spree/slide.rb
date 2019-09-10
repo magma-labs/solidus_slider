@@ -1,6 +1,6 @@
 module Spree
   class Slide < ActiveRecord::Base
-    belongs_to :product, touch: true
+    belongs_to :product, touch: true, optional: true
 
     self.table_name = 'spree_slides'
 

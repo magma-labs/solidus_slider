@@ -1,5 +1,6 @@
 # Solidus Slider
-[![Build Status](https://travis-ci.org/magma-labs/solidus_slider.svg?branch=master)](https://travis-ci.org/magma-labs/solidus_slider)<br />
+[![CircleCI](https://circleci.com/gh/magma-labs/solidus_slider.svg?style=svg)](https://circleci.com/gh/magma-labs/solidus_slider)
+
 Credit to https://github.com/samanmohamadi/solidus_slider
 
 Basic Overview

@@ -1,7 +1,7 @@
 <%= render partial: 'spree/admin/shared/configuration_menu' %>
 
 <% content_for :page_actions do %>
-  <%= link_to I18n.t('slider_locations.new_location'), new_object_url, { id: 'admin_new_slide_link' } %>
+  <%= link_to I18n.t('slider_locations.new_location'), new_object_url, { id: 'admin_new_slide_link' , class: 'btn btn-primary' } %>
 <% end %>
 
 <% content_for :page_title do %>

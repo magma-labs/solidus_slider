@@ -1,3 +1,3 @@
 <!-- insert_bottom "[data-hook='admin_configurations_sidebar_menu']" -->
 
-<%= settings_tab_item Spree.t('slider_locations.config_name'), admin_slide_locations_path %>
+<%= settings_tab_item I18n.t('slider_locations.config_name'), admin_slide_locations_path %>

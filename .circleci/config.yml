@@ -5,6 +5,7 @@ orbs:
   # run specs against Solidus supported versions only without the need
   # to change this configuration every time a Solidus version is released
   # or goes EOL.
+  extensions: solidusio/extensions@0.2.26
   solidusio_extensions: solidusio/extensions@volatile
 
 jobs:
@@ -16,12 +17,17 @@ jobs:
     executor: solidusio_extensions/mysql
     steps:
       - solidusio_extensions/run-tests
+  lint-code:
+    executor: solidusio_extensions/sqlite-memory
+    steps:
+      - solidusio_extensions/lint-code
 
 workflows:
   "Run specs on supported Solidus versions":
     jobs:
       - run-specs-with-postgres
       - run-specs-with-mysql
+
   "Weekly run specs against master":
     triggers:
       - schedule:

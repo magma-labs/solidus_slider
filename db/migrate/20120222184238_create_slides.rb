@@ -1,4 +1,6 @@
-class CreateSlides < ActiveRecord::Migration[4.2]
+# frozen_string_literal: true
+
+class CreateSlides < SolidusSupport::Migration[4.2]
   def change
     create_table :spree_slides do |t|
       t.string :name

@@ -1,8 +1,8 @@
-module Spree
-  class Slide < ActiveRecord::Base
-    belongs_to :product, touch: true, optional: true
+# frozen_string_literal: true
 
-    self.table_name = 'spree_slides'
+module Spree
+  class Slide < ApplicationRecord
+    belongs_to :product, touch: true, optional: true
 
     has_many :slide_slide_locations
     has_many :slide_locations, through: :slide_slide_locations

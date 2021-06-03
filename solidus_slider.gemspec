@@ -1,10 +1,7 @@
-# encoding: UTF-8
-$:.push File.expand_path('../lib', __FILE__)
+# frozen_string_literal: true
 
-# Maintain your gem's version:
-require 'solidus_slider/version'
+require_relative 'lib/solidus_slider/version'
 
-# Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = 'solidus_slider'
   s.version     = SolidusSlider::VERSION
@@ -13,29 +10,30 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/magma-labs/solidus_slider'
   s.summary     = 'Spree Slider extension'
   s.description = 'Adds a slider to the homepage'
+  s.homepage = 'https://github.com/jtapia/solidus_slider'
+  s.license = 'BSD-3-Clause'
 
-  # s.files = Dir['{app,config,models,db,lib}/**/*'] + %w(MIT-LICENSE Rakefile README.md)
-  s.files         = `git ls-files`.split("\n")
-  s.require_path  = 'lib'
-  s.requirements << 'none'
+  if s.respond_to?(:metadata)
+    s.metadata['homepage_uri'] = s.homepage if s.homepage
+    s.metadata['source_code_uri'] = s.homepage if s.homepage
+  end
 
-  solidus_version = ['>= 1.2', '< 3']
-  s.add_dependency 'solidus_core', solidus_version
-  s.add_dependency 'solidus_backend', solidus_version
-  s.add_dependency 'solidus_api', solidus_version
-  s.add_dependency 'solidus_support'
-  s.add_dependency 'jbuilder', '~> 2.6'
-  s.add_dependency 'kaminari', '>= 0.17', '< 2.0'
+  s.required_ruby_version = Gem::Requirement.new('>= 2.5')
 
-  s.add_development_dependency 'database_cleaner', '~> 1.6'
-  s.add_development_dependency 'factory_bot', '~> 4.4'
-  s.add_development_dependency 'ffaker'
-  s.add_development_dependency 'rspec-rails', '4.0.0.beta2'
-  s.add_development_dependency 'sqlite3'
-  s.add_development_dependency 'simplecov', '~> 0.14'
-  s.add_development_dependency 'rspec-activemodel-mocks'
-  s.add_development_dependency 'webmock'
+  files = Dir.chdir(__dir__) { `git ls-files -z`.split("\x0") }
+
+  s.files = files.grep_v(%r{^(test|spec|features)/})
+  s.test_files = files.grep(%r{^(test|spec|features)/})
+  s.bindir = 'exe'
+  s.executables = files.grep(%r{^exe/}) { |f| File.basename(f) }
+  s.require_paths = ['lib']
+
+  s.add_dependency 'solidus_core', ['>= 2.5', '< 4']
+  s.add_dependency 'solidus_backend', ['>= 2.5', '< 4']
+  s.add_dependency 'solidus_support', '~> 0.5'
+  s.add_dependency 'deface', '~> 1.0'
+
+  s.add_development_dependency 'solidus_dev_support', '~> 2.3'
   s.add_development_dependency 'rb-fsevent'
   s.add_development_dependency 'growl'
 end
-

@@ -5,7 +5,6 @@ orbs:
   # run specs against Solidus supported versions only without the need
   # to change this configuration every time a Solidus version is released
   # or goes EOL.
-  extensions: solidusio/extensions@0.2.26
   solidusio_extensions: solidusio/extensions@volatile
 
 jobs:

@@ -1,7 +1,7 @@
-module Spree
-  class SlideSlideLocation < ActiveRecord::Base
-    self.table_name = 'spree_slide_slide_locations'
+# frozen_string_literal: true
 
+module Spree
+  class SlideSlideLocation < ApplicationRecord
     belongs_to :slide
     belongs_to :slide_location
   end

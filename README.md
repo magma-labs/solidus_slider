@@ -1,5 +1,6 @@
 # Solidus Slider
-[![Build Status](https://travis-ci.org/jtapia/solidus_slider.svg?branch=master)](https://travis-ci.org/jtapia/solidus_slider)<br />
+
+[![Circle CI](https://circleci.com/gh/jtapia/solidus_slider/tree/master.svg?style=shield)](https://circleci.com/gh/jtapia/solidus_slider/tree/master)
 Credit to https://github.com/samanmohamadi/solidus_slider
 
 Basic Overview

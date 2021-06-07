@@ -2,12 +2,14 @@
 
 module SolidusSlider
   module Spree
-    module Product
+    module ProductDecorator
       def self.prepended(base)
-        base.has_one :slide
+        base.has_one :slide, class_name: 'Spree::Slide'
         base.after_update :destroy_slide_if_deleted
 
-        def base.destroy_slide_if_deleted
+        private
+
+        def destroy_slide_if_deleted
           slide.update(published: false) if slide && deleted_at
         end
       end

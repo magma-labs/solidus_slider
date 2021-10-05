@@ -24,7 +24,7 @@ else
 end
 
 # Requires factories defined in lib/solidus_slider/factories.rb
-require 'solidus_slider/factories'
+load "#{File.dirname(__FILE__)}/../lib/solidus_slider/factories.rb"
 
 RSpec.configure do |config|
   eval("config.include #{ENV.fetch('FACTORY')}::Syntax::Methods")

@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_path  = 'lib'
   s.requirements << 'none'
 
-  solidus_version = ['>= 1.2', '< 3']
+  solidus_version = ['>= 1.2', '< 4']
   s.add_dependency 'solidus_core', solidus_version
   s.add_dependency 'solidus_backend', solidus_version
   s.add_dependency 'solidus_api', solidus_version
@@ -31,7 +31,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'factory_bot', '~> 4.4'
   s.add_development_dependency 'factory_girl'
   s.add_development_dependency 'ffaker'
-  s.add_development_dependency 'rspec-rails', '~> 3.3'
+  s.add_development_dependency 'rspec-rails', '4.0.0.beta2'
+  s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'simplecov', '~> 0.14'
   s.add_development_dependency 'rspec-activemodel-mocks'
   s.add_development_dependency 'webmock'

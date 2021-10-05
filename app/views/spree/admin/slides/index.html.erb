@@ -2,22 +2,22 @@
 
 <% content_for :page_actions do %>
   <li>
-    <%= button_link_to Spree.t(:'slider.new_slide'), new_object_url, id: 'admin_new_slide_link' %>
+    <%= link_to I18n.t(:'slider.new_slide'), new_object_url, id: 'admin_new_slide_link' , class: 'btn btn-primary' %>
   </li>
 <% end %>
 
 <% content_for :page_title do %>
-  <%= Spree.t('slider.title') %>
+  <%= I18n.t('slider.title') %>
 <% end %>
 
 <% if @slides %>
   <table class='index sortable' id='listing_slides' data-hook data-sortable-link='<%= update_positions_admin_slides_url %>' >
     <thead>
       <tr data-hook='admin_slides_index_headers'>
-        <th colspan='2'><%= Spree.t(:image) %></th>
-        <th><%= Spree.t(:name) %></th>
-        <th><%= Spree.t(:product) %></th>
-        <th><%= Spree.t(:published) %></th>
+        <th colspan='2'><%= I18n.t(:image) %></th>
+        <th><%= I18n.t(:name) %></th>
+        <th><%= I18n.t(:product) %></th>
+        <th><%= I18n.t(:published) %></th>
         <th data-hook='admin_slides_index_header_actions' class='actions'></th>
       </tr>
     </thead>
@@ -29,7 +29,7 @@
           <td class='align-left'><%= image_tag slide.slide_image.url, style: 'width: 120px; height: auto;' %></td>
           <td class='align-left'><%= link_to slide.name, object_url(slide) %></td>
           <td class='align-left'><%= link_to slide.product.name, object_url(slide) unless slide.product_id.blank? %></td>
-          <td class='align-center'><%= slide.published ? Spree.t(:say_yes) : Spree.t(:say_no) %></td>
+          <td class='align-center'><%= slide.published ? I18n.t(:say_yes) : I18n.t(:say_no) %></td>
           <td data-hook='admin_slides_index_row_actions' class='actions'>
             <%= link_to_edit slide, no_text: true, class: 'edit' if can?(:edit, slide) %>
             &nbsp;

@@ -2,22 +2,22 @@
   <div class='row'>
     <div class='left col-2'>
       <%= f.field_container :position do %>
-        <%= f.label :position, Spree.t(:position) %>
+        <%= f.label :position, I18n.t(:position) %>
         <%= f.number_field :position, class: 'fullwidth' %>
       <% end %>
     </div>
 
     <div class='col-5'>
       <%= f.field_container :product_id do %>
-        <%= label_tag :product_id, Spree.t(:product) %><br />
+        <%= label_tag :product_id, I18n.t(:product) %><br />
         <%= hidden_field_tag 'slide[product_id]', f.object.product_id.to_s, class: 'product_picker fullwidth' %>
       <% end %>
     </div>
 
     <div class='col-5'>
       <%= f.field_container :name do %>
-        <%= f.label :name, Spree.t(:name) %><br />
-        <%= f.text_field :name, class: 'fullwidth', placeholder: Spree.t('slider.placeholder_name') %>
+        <%= f.label :name, I18n.t(:name) %><br />
+        <%= f.text_field :name, class: 'fullwidth', placeholder: I18n.t('slider.placeholder_name') %>
       <% end %>
     </div>
 
@@ -25,35 +25,35 @@
       <div class='field checkbox'>
         <label>
           <%= f.check_box :published %>
-          <%= Spree.t(:published) %>
+          <%= I18n.t(:published) %>
         </label>
       </div>
     </div>
 
     <div class='col-5'>
       <%= f.field_container :link_url do %>
-        <%= f.label :link_url, Spree.t(:link_url) %><br />
-        <%= f.text_field :link_url, class: 'fullwidth', placeholder: Spree.t('slider.placeholder_link_url') %>
+        <%= f.label :link_url, I18n.t(:link_url) %><br />
+        <%= f.text_field :link_url, class: 'fullwidth', placeholder: I18n.t('slider.placeholder_link_url') %>
       <% end %>
     </div>
 
     <div class='col-5'>
       <%= f.field_container :body do %>
-        <%= f.label :body, Spree.t(:body) %><br />
+        <%= f.label :body, I18n.t(:body) %><br />
         <%= f.text_area :body, { cols: 60, rows: 4, class: 'fullwidth'} %>
       <% end %>
     </div>
 
     <div class='col-5'>
       <%= f.field_container :slide_locations do %>
-        <%= label_tag :slide_location_ids, Spree.t(:location) %><br />
+        <%= label_tag :slide_location_ids, I18n.t(:location) %><br />
         <%= hidden_field_tag 'slide[slide_location_ids]', f.object.slide_location_ids.join(','), class: 'slide_location_picker fullwidth' %>
       <% end %>
     </div>
 
     <div class='col-4'>
       <%= f.field_container :image do %>
-        <%= f.label :image, Spree.t(:image) %> <i>(<%= Spree.t('slider.image_tip') %>)</i><br />
+        <%= f.label :image, I18n.t(:image) %> <i>(<%= I18n.t('slider.image_tip') %>)</i><br />
         <%= f.file_field :image %>
       <% end %>
     </div>

@@ -1,12 +1,12 @@
 <%= render partial: 'spree/admin/shared/configuration_menu' %>
 
 <% content_for :page_title do %>
-  <%= Spree.t('slider.new_slide') %>
+  <%= I18n.t('slider.new_slide') %>
 <% end %>
 
 <% content_for :page_actions do %>
   <li>
-    <%= button_link_to Spree.t('slider.back_to_slides'), spree.admin_slides_path %>
+    <%= link_to I18n.t('slider.back_to_slides'), spree.admin_slides_path, class: 'btn btn-primary' %>
   </li>
 <% end %>
 

@@ -13,9 +13,6 @@ Rails/SkipsModelValidations:
   Exclude:
     - db/migrate/**/*
 
-Gemspec/OrderedDependencies:
-  Enabled: false
-
 Style/RegexpLiteral:
   Enabled: false
 
@@ -38,4 +35,7 @@ Rails/CreateTableWithTimestamps:
   Enabled: false
 
 Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Layout/ArgumentAlignment:
   Enabled: false

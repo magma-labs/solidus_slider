@@ -15,20 +15,22 @@ RSpec.describe Spree::Admin::SlidesController do
   end
 
   before do
-    allow(described_class).to receive(:permitted_resource_params) { params[:slide] }
+    allow(described_class)
+      .to receive(:permitted_resource_params) { params[:slide] }
   end
 
   describe '#index' do
     it 'returns 200' do
       get :index
-      expect(response.status).to eq(200)
+      expect(response).to have_http_status(:ok)
     end
   end
 
   describe '#update' do
     it 'returns true' do
       put :update, params: params
-      expect(response.status).to eq(302)
+
+      expect(response).to have_http_status(:found)
       expect(slide.slide_locations).not_to be_empty
     end
   end

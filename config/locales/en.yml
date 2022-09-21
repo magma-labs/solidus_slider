@@ -1,20 +1,20 @@
 en:
   activerecord:
     models:
-      spree/slide: "Slide"
+      spree/slide: Slide
 
   spree:
-    next: "Next"
-    previous: "Previous"
-    name: "Name"
-    body: "Body"
-    link_url: "Link URL"
-    image: "Image"
-    image_file_name: "Image file name"
-    published: "Published"
-    position: "Position"
-    y: "Yes"
-    n: "No"
+    next: Next
+    previous: Previous
+    name: Name
+    body: Body
+    link_url: Link URL
+    image: Image
+    image_file_name: Image file name
+    published: Published
+    position: Position
+    y: Yes
+    n: No
 
     admin:
       tab:
@@ -22,12 +22,17 @@ en:
         slide_locations: Slide Locations
 
     slider:
-      config_name: "Spree Slider"
-      config_description: "Manage Spree Slider contents"
-      title: "Slides"
-      new_slide: "New Slide"
-      editing_slide: "Editing Slide"
-      back_to_slides: "Back to Slides"
-      placeholder_name: "Leave blank to use product name"
-      placeholder_link_url: "Leave blank to use product url"
-      image_tip: "Default first product image"
+      config_name: Spree Slider
+      config_description: Manage Spree Slider contents
+      title: Slides
+      new_slide: New Slide
+      editing_slide: Editing Slide
+      back_to_slides: Back to Slides
+      placeholder_name: Leave blank to use product name
+      placeholder_link_url: Leave blank to use product url
+      image_tip: Default first product image
+
+    slider_location:
+      editing_location: Editing Location
+      back_to_locations: Back To Locations
+      new_location: New Location

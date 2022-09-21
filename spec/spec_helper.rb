@@ -1,44 +1,28 @@
-ENV['RAILS_ENV'] ||= 'test'
+# frozen_string_literal: true
 
-require File.expand_path('../dummy/config/environment.rb',  __FILE__)
+# Configure Rails Environment
+ENV['RAILS_ENV'] = 'test'
 
-require 'solidus_frontend'
-require 'solidus_backend'
-require 'rspec/rails'
+# Run Coverage report
+require 'solidus_dev_support/rspec/coverage'
 
-Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |file| require file }
+require File.expand_path('dummy/config/environment.rb', __dir__)
 
-require 'spree/testing_support/url_helpers'
-require 'spree/testing_support/controller_requests'
-require 'spree/testing_support/authorization_helpers'
-require 'spree/testing_support/preferences'
-require 'spree/testing_support/factories'
-require 'spree/api/testing_support/helpers'
-require 'spree/api/testing_support/setup'
+# Requires factories and other useful helpers defined in spree_core.
+require 'solidus_dev_support/rspec/feature_helper'
 
-branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
-if branch == 'master' || branch >= 'v2.5'
-  ENV['FACTORY'] = 'FactoryBot'
-else
-  ENV['FACTORY'] = 'FactoryGirl'
-end
+# Requires supporting ruby files with custom matchers and macros, etc,
+# in spec/support/ and its subdirectories.
+Dir["#{__dir__}/support/**/*.rb"].sort.each { |f| require f }
 
-# Requires factories defined in lib/solidus_slider/factories.rb
-load "#{File.dirname(__FILE__)}/../lib/solidus_slider/factories.rb"
+# Requires factories defined in lib/solidus_related_products/testing_support/factories.rb
+SolidusDevSupport::TestingSupport::Factories.load_for(SolidusSlider::Engine)
 
 RSpec.configure do |config|
-  eval("config.include #{ENV.fetch('FACTORY')}::Syntax::Methods")
-
   config.infer_spec_type_from_file_location!
-  config.infer_base_class_for_anonymous_controllers = false
-  config.infer_spec_type_from_file_location!
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
 
-  config.include Spree::Api::TestingSupport::Helpers, type: :controller
-  config.extend  Spree::Api::TestingSupport::Setup, type: :controller
-  config.include Spree::TestingSupport::ControllerRequests, type: :controller
-  config.include Spree::TestingSupport::UrlHelpers
-  config.extend Spree::TestingSupport::AuthorizationHelpers::Request, type: :request
-  config.include Spree::TestingSupport::Preferences, type: :controller
-  config.include Spree::TestingSupport::Preferences, type: :model
+  if Spree.solidus_gem_version < Gem::Version.new('2.11')
+    config.extend Spree::TestingSupport::AuthorizationHelpers::Request, type: :system
+  end
 end

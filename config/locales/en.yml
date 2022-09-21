@@ -16,6 +16,11 @@ en:
     y: "Yes"
     n: "No"
 
+    admin:
+      tab:
+        slides: Slides
+        slide_locations: Slide Locations
+
     slider:
       config_name: "Spree Slider"
       config_description: "Manage Spree Slider contents"

@@ -1,22 +1,36 @@
+# frozen_string_literal: true
+
+require 'solidus_slider'
+
 module SolidusSlider
   class Engine < Rails::Engine
-    require 'spree/core'
-    isolate_namespace Spree
-    engine_name 'solidus_slider'
+    include SolidusSupport::EngineExtensions
 
-    config.autoload_paths += %W(#{config.root}/lib)
+    isolate_namespace Spree
+
+    engine_name 'solidus_slider'
 
     # use rspec for tests
     config.generators do |g|
       g.test_framework :rspec
     end
 
-    def self.activate
-      Dir.glob(File.join(File.dirname(__FILE__), "../../app/**/*_decorator*.rb")) do |c|
-        Rails.configuration.cache_classes ? require(c) : load(c)
+    config.to_prepare do
+      ::Spree::Backend::Config.configure do |config|
+        config.menu_items << config.class::MenuItem.new(
+          [:slides],
+          'photo',
+          label: 'slides',
+          condition: -> { can?(:manage, ::Spree::Slide) }
+        )
+
+        config.menu_items << config.class::MenuItem.new(
+          [:slide_locations],
+          'wrench',
+          label: 'slide_locations',
+          condition: -> { can?(:manage, ::Spree::SlideLocation) }
+        )
       end
     end
-
-    config.to_prepare &method(:activate).to_proc
   end
 end

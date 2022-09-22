@@ -32,7 +32,7 @@ en:
       placeholder_link_url: Leave blank to use product url
       image_tip: Default first product image
 
-    slider_location:
+    slide_locations:
       editing_location: Editing Location
       back_to_locations: Back To Locations
       new_location: New Location

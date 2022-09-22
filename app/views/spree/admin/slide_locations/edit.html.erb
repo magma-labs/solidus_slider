@@ -1,9 +1,10 @@
 <% content_for :page_title do %>
-  <%= I18n.t('slider_locations.editing_location') %>
+  <%= I18n.t('spree.slide_locations.editing_location') %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <%= link_to I18n.t('slider_locations.back_to_locations'), spree.admin_slide_locations_path, class: 'btn btn-primary' %>
+  <%= link_to I18n.t('spree.slide_locations.back_to_locations'),
+              spree.admin_slide_locations_path, class: 'btn btn-primary' %>
 <% end %>
 
 <%= render 'spree/shared/error_messages', target: @slide_location %>
@@ -11,7 +12,7 @@
 <%= form_for [:admin, @slide_location] do |f| %>
   <%= render partial: 'form', locals: { f: f } %>
 
-  <div class="form-actions" data-hook="buttons">
+  <div class='form-actions' data-hook='buttons'>
     <%= render partial: 'spree/admin/shared/edit_resource_links' %>
   </div>
 <% end %>

@@ -24,7 +24,7 @@ es-MX:
       placeholder_name: "En blanco para usar el del producto"
       placeholder_link_url: "En blanco para usar la del producto"
       image_tip: "Si no selecciona ninguna imagen, se tomará la primera del producto"
-    slider_locations:
+    slide_locations:
       config_name: 'Locación de Diapositivas'
       config_description: 'Configura las locaciones de las diapositivas'
       title: 'Locación de Diapositivas'

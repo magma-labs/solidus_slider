@@ -1,45 +1,45 @@
 <h1><%= t(:slide) %></h1>
-<h1><%= I18n.t(:slide) %></h1>
+<h1><%= I18n.t('spree.slide') %></h1>
 
 <table class="table">
   <tr data-hook="product_id">
-    <th><%= I18n.t(:product) %></th>
+    <th><%= I18n.t('spree.product') %></th>
     <td>
       <%= @slide.product.name unless @slide.product_id.blank? %>
     </td>
   </tr>
   <tr data-hook="name">
-    <th><%= I18n.t(:name) %></th>
+    <th><%= I18n.t('spree.name') %></th>
     <td>
       <%= @slide.name %>
     </td>
   </tr>
   <tr data-hook="body">
-    <th><%= I18n.t(:body) %></th>
+    <th><%= I18n.t('spree.body') %></th>
     <td>
       <%= @slide.body %>
     </td>
   </tr>
   <tr data-hook="link_url">
-    <th><%= I18n.t(:link_url) %></th>
+    <th><%= I18n.t('spree.link_url') %></th>
     <td>
       <%= @slide.link_url %>
     </td>
   </tr>
   <tr data-hook="published">
-    <th><%= I18n.t(:published) %></th>
+    <th><%= I18n.t('spree.published') %></th>
     <td>
-      <%= @slide.published ? I18n.t(:y) : I18n.t(:n) %>
+      <%= @slide.published ? I18n.t('spree.y') : I18n.t('spree.n') %>
     </td>
   </tr>
   <tr data-hook="image_file_name">
-    <th><%= I18n.t(:image_file_name) %></th>
+    <th><%= I18n.t('spree.image_file_name') %></th>
     <td>
       <%= @slide.image_file_name %>
     </td>
   </tr>
   <tr data-hook="position">
-    <th><%= I18n.t(:position) %></th>
+    <th><%= I18n.t('spree.position') %></th>
     <td>
       <%= @slide.position %>
     </td>
@@ -47,6 +47,6 @@
 </table>
 
 <p>
-  <%= link_to_edit @slide, class: 'edit_slide' %> <%= I18n.t(:or) %>
-  <%= link_to I18n.t(:back), collection_url %>
+  <%= link_to_edit @slide, class: 'edit_slide' %> <%= I18n.t('spree.or') %>
+  <%= link_to I18n.t('spree.back'), collection_url %>
 </p>

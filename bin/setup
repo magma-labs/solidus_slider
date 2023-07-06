@@ -1,0 +1,3 @@
+gem install bundler --conservative
+bundle update
+bin/rake clobber

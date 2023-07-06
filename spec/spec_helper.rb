@@ -3,10 +3,16 @@
 # Configure Rails Environment
 ENV['RAILS_ENV'] = 'test'
 
+require 'rails-controller-testing'
+Rails::Controller::Testing.install
+
 # Run Coverage report
 require 'solidus_dev_support/rspec/coverage'
 
-require File.expand_path('dummy/config/environment.rb', __dir__)
+# Create the dummy app if it's still missing.
+dummy_env = "#{__dir__}/dummy/config/environment.rb"
+system 'bin/rake extension:test_app' unless File.exist? dummy_env
+require dummy_env
 
 # Requires factories and other useful helpers defined in spree_core.
 require 'solidus_dev_support/rspec/feature_helper'
@@ -15,7 +21,8 @@ require 'solidus_dev_support/rspec/feature_helper'
 # in spec/support/ and its subdirectories.
 Dir["#{__dir__}/support/**/*.rb"].sort.each { |f| require f }
 
-# Requires factories defined in lib/solidus_related_products/testing_support/factories.rb
+# Requires factories defined in Solidus core and this extension.
+# See: lib/solidus_digital/testing_support/factories.rb
 SolidusDevSupport::TestingSupport::Factories.load_for(SolidusSlider::Engine)
 
 RSpec.configure do |config|

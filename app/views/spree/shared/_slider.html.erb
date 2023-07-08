@@ -1,8 +1,20 @@
-<% if slider.size > 0 %>
-  <slick slides-to-show="1" ng-if="true" settings="{arrows:false,centerMode:false,centerPadding:'0',autoplay: true,autoplaySpeed: 5000,fade:true}">
+<% if slider.try(:size).to_i > 0 %>
+  <slick slides-to-show='1'
+         ng-if='true'
+         settings='{
+           arrows:false,
+           centerMode:false,
+           centerPadding:"0",
+           autoplay: true,
+           autoplaySpeed: 5000,
+           fade:true
+         }'>
     <% slider.each_with_index do |slide, index| %>
-      <div class="item">
-        <%= link_to image_tag(slide.slide_image.url, alt: slide.slide_caption, class:'img-responsive'), url_for(slide.slide_link) %>
+      <div class='item'>
+        <%= link_to image_tag(slide.slide_image.url,
+                              alt: slide.slide_caption,
+                              class:'img-responsive'),
+                    url_for(slide.slide_link) %>
 
         <div>
           <% if slide.show_caption? %>
@@ -10,7 +22,7 @@
           <% end %>
 
           <% unless slide.body.blank? %>
-            <p><%= slide.body %><p>
+            <p><%= slide.body %></p>
           <% end %>
         </div>
       </div>

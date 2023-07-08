@@ -10,3 +10,8 @@ nbproject
 spec/dummy
 pkg/*
 Gemfile.lock
+Gemfile-local
+/sandbox
+.rvmrc
+.ruby-version
+.ruby-gemset

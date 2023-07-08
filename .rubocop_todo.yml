@@ -1,0 +1,14 @@
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/CreateTableWithTimestamps:
+  Enabled: false
+
+Layout/ArgumentAlignment:
+  Enabled: false
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false

@@ -9,7 +9,7 @@ RSpec.describe Spree::Admin::SlidesController do
     {
       id: slide.id,
       slide: {
-        slide_location_ids: [slide_location.id]
+        slide_location_ids: slide_location.id
       }
     }
   end

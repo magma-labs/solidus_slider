@@ -60,8 +60,8 @@ module Spree
       end
 
       def handle_slide_locations(object)
-        slide_location_ids = permitted_resource_params[:slide_location_ids]
-        slide_location_ids = slide_location_ids&.split(',') || []
+        slide_location_ids = permitted_resource_params[:slide_location_ids] || ''
+        slide_location_ids = slide_location_ids.split(',')
 
         return unless slide_location_ids
 
